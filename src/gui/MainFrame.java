@@ -1,6 +1,7 @@
 package gui;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class MainFrame extends JFrame{
 
@@ -11,7 +12,7 @@ public class MainFrame extends JFrame{
     public MainFrame(){
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("KAS Information");
-        setBounds(400,200,900,670);
+        setBounds((Toolkit.getDefaultToolkit().getScreenSize().width/2)-450,(Toolkit.getDefaultToolkit().getScreenSize().height/2)-335,900, 670);
         setLayout(null);
         setResizable(false);
         addComponents();

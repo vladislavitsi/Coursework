@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.LinkedList;
 
-class SideMenu extends JScrollPane {
+class SideMenu extends JPanel {
 
     private LinkedList<ItemSideMenu> sideMenuList;
     private final static Color enteredButtonColor = new Color(245,245,245);
@@ -16,12 +16,8 @@ class SideMenu extends JScrollPane {
     SideMenu(){
         setBorder(new MatteBorder(0,0,0,1,Color.LIGHT_GRAY));
 
-        setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-        setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        JPanel panel = new JPanel();
-        setViewportView(panel);
-        panel.setLayout(null);
-        panel.setBackground(Color.WHITE);
+        setLayout(null);
+        setBackground(Color.WHITE);
 
         sideMenuList = new LinkedList<>();
         sideMenuList.add(new ItemSideMenu("Процессор"));
@@ -37,8 +33,8 @@ class SideMenu extends JScrollPane {
         sideMenuList.add(new ItemSideMenu("Время работы пользователей"));
         int i=0;
         for(ItemSideMenu itemSideMenu:sideMenuList){
-            panel.add(itemSideMenu);
-            itemSideMenu.setBounds(0,5+i*55,250,50);
+            add(itemSideMenu);
+            itemSideMenu.setBounds(0,5+i*55,249,50);
             itemSideMenu.addMouseListener(new Listener(itemSideMenu));
             i++;
         }

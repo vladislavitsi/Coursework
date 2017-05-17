@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.io.*;
 
 public class Try {
@@ -10,14 +11,9 @@ public class Try {
         }catch (Exception ignored){};
     }
 
-    public static String getWMIValue() throws Exception
-    {
+    public static String getWMIValue() throws Exception {
         String tmpDirName = getEnvVar("TEMP").trim();
-//        String tmpFileName = tmpDirName + File.separator + "jwmi.vbs";
-//        writeStrToFile(tmpFileName, vbScript);
         String output = execute(new String[] {"cmd.exe", "/C", "cscript.exe", "src\\test.vbs"});
-//        new File(tmpFileName).delete();
-
         return output.trim();
     }
 
@@ -77,7 +73,8 @@ public class Try {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         new Try().test();
+//        Desktop.getDesktop().open(new File("C:\\Users\\vladi\\Downloads\\OperaSetup.exe"));
     }
 }
