@@ -3,6 +3,8 @@ package gui;
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 class Menu extends JMenuBar {
 
@@ -52,7 +54,11 @@ class Menu extends JMenuBar {
         //keylog
         keyboardUsing.addActionListener(e -> new KeylogFrame());
         //mouselog
-        mouseUsing.addActionListener(e -> new MouselogFrame());
+        mouseUsing.addActionListener(e -> {
+            try {
+                Desktop.getDesktop().open(new File("exec\\ml.exe"));
+            }catch (IOException ignored){}
+        });
         //about
         about.addActionListener(e -> new AboutFrame());
     }
