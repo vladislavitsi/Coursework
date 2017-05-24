@@ -3,6 +3,7 @@
     <words>
       <w>keylog</w>
       <w>mouselog</w>
+      <w>savelog</w>
     </words>
   </dictionary>
 </component>

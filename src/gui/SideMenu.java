@@ -1,5 +1,7 @@
 package gui;
 
+import gui.menuActivities.Activity;
+
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import java.awt.*;
@@ -20,17 +22,17 @@ class SideMenu extends JPanel {
         setBackground(Color.WHITE);
 
         sideMenuList = new LinkedList<>();
-        sideMenuList.add(new ItemSideMenu("Процессор"));
-        sideMenuList.add(new ItemSideMenu("BIOS"));
-        sideMenuList.add(new ItemSideMenu("Разделы HDD"));
-        sideMenuList.add(new ItemSideMenu("HDD"));
-        sideMenuList.add(new ItemSideMenu("Системная плата"));
-        sideMenuList.add(new ItemSideMenu("Видеокарта"));
-        sideMenuList.add(new ItemSideMenu("Монитор"));
-        sideMenuList.add(new ItemSideMenu("Сетевые адаптеры"));
-        sideMenuList.add(new ItemSideMenu("Запущеные приложения"));
-        sideMenuList.add(new ItemSideMenu("Время работы ПК"));
-        sideMenuList.add(new ItemSideMenu("Время работы пользователей"));
+        sideMenuList.add(new ItemSideMenu("Процессор","CPU"));
+        sideMenuList.add(new ItemSideMenu("BIOS","BIOS"));
+        sideMenuList.add(new ItemSideMenu("Разделы HDD","HDDPart"));
+        sideMenuList.add(new ItemSideMenu("HDD","HDD"));
+        sideMenuList.add(new ItemSideMenu("Системная плата","MBoard"));
+        sideMenuList.add(new ItemSideMenu("Видеокарта","GPU"));
+        sideMenuList.add(new ItemSideMenu("Монитор","Monitor"));
+        sideMenuList.add(new ItemSideMenu("Сетевые адаптеры","Net"));
+        sideMenuList.add(new ItemSideMenu("Запущеные приложения","Apps"));
+        sideMenuList.add(new ItemSideMenu("Время работы ПК","PCTime"));
+        sideMenuList.add(new ItemSideMenu("Время работы пользователей","UTime"));
         int i=0;
         for(ItemSideMenu itemSideMenu:sideMenuList){
             add(itemSideMenu);
@@ -67,9 +69,16 @@ class SideMenu extends JPanel {
                 }
                 this.itemSideMenu.setBackground(SideMenu.pressedButtonColor);
                 itemSideMenu.setPressed(true);
+                try {
+                    InformPanel.getInformPanel().addC((Activity) Class.forName("gui.menuActivities."+itemSideMenu.getcText()).newInstance());
+                }catch (Exception c){
+                    c.printStackTrace();
+                }
+
             }else {
                 this.itemSideMenu.setBackground(SideMenu.enteredButtonColor);
                 itemSideMenu.setPressed(false);
+                InformPanel.getInformPanel().clear();
             }
         }
 

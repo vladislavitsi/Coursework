@@ -10,11 +10,11 @@ class Menu extends JMenuBar {
 
     private final static Font FONT = new Font("dd",Font.TRUETYPE_FONT,12);
 
-    ItemMenu saveLog;
-    ItemMenu exit;
-    ItemMenu keyboardUsing;
-    ItemMenu mouseUsing;
-    ItemMenu about;
+    private ItemMenu saveLog;
+    private ItemMenu exit;
+    private ItemMenu keyboardUsing;
+    private ItemMenu mouseUsing;
+    private ItemMenu about;
 
     Menu(){
         setBackground(Color.WHITE);
@@ -47,12 +47,17 @@ class Menu extends JMenuBar {
         add(aboutMenu);
     }
 
-    void addActionListeners(){
-        //savelog
+    private void addActionListeners(){
+        //save log
+        saveLog.addActionListener(e -> {});
         //exit
         exit.addActionListener(e -> System.exit(0));
         //keylog
-        keyboardUsing.addActionListener(e -> new KeylogFrame());
+        keyboardUsing.addActionListener(e -> {
+            try {
+                Desktop.getDesktop().open(new File("exec\\kl.exe"));
+            }catch (IOException ignored){}
+        });
         //mouselog
         mouseUsing.addActionListener(e -> {
             try {

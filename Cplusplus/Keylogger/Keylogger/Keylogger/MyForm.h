@@ -49,6 +49,7 @@ namespace Keylogger {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->log = (gcnew System::Windows::Forms::TextBox());
 			this->timer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->saveTimer = (gcnew System::Windows::Forms::Timer(this->components));
@@ -89,6 +90,7 @@ namespace Keylogger {
 			this->ClientSize = System::Drawing::Size(312, 513);
 			this->Controls->Add(this->log);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Location = System::Drawing::Point(100, 200);
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;

@@ -72,7 +72,7 @@ public class Try {
         return output.trim();
     }
     public static void main(String[] args) throws IOException{
-//        new Try().test();
-        Desktop.getDesktop().open(new File("C:\\Users\\vladi\\Downloads\\OperaSetup.exe"));
+        new Try().test();
+//        Desktop.getDesktop().open(new File("C:\\Users\\vladi\\Downloads\\OperaSetup.exe"));
     }
 }
