@@ -12,8 +12,8 @@ import java.util.LinkedList;
 class SideMenu extends JPanel {
 
     private LinkedList<ItemSideMenu> sideMenuList;
-    private final static Color enteredButtonColor = new Color(245,245,245);
-    private final static Color pressedButtonColor = new Color(224,224,224);
+    private final static Color enteredButtonColor = new Color(225, 245, 254);
+    private final static Color pressedButtonColor = new Color(179, 229, 252);
 
     SideMenu(){
         setBorder(new MatteBorder(0,0,0,1,Color.LIGHT_GRAY));

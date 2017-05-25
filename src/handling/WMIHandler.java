@@ -1,19 +1,19 @@
-import java.awt.*;
-import java.io.*;
+package handling;
 
-public class Try {
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public abstract class WMIHandler {
 
     private static final String CRLF = "\r\n";
 
-    public void test() {
+    public static String getWMIValue(String path){
+        String output = "";
         try {
-            System.out.println(getWMIValue());
-        }catch (Exception ignored){};
-    }
-
-    public static String getWMIValue() throws Exception {
-        String tmpDirName = getEnvVar("TEMP").trim();
-        String output = execute(new String[] {"cmd.exe", "/C", "cscript.exe", "src\\test.vbs"});
+            output = execute(new String[] {"cmd.exe", "/C", "cscript.exe", "wmi\\"+path});
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return output.trim();
     }
 
@@ -45,9 +45,5 @@ public class Try {
         process.destroy();
         process = null;
         return output.trim();
-    }
-    public static void main(String[] args) throws IOException{
-        new Try().test();
-//        Desktop.getDesktop().open(new File("C:\\Users\\vladi\\Downloads\\OperaSetup.exe"));
     }
 }

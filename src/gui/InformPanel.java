@@ -15,6 +15,7 @@ class InformPanel extends JScrollPane {
         setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         panel = new JPanel();
         setViewportView(panel);
+        getVerticalScrollBar().setUnitIncrement(16);
         panel.setLayout(new BorderLayout());
         instruction(new JLabel());
     }
@@ -28,7 +29,7 @@ class InformPanel extends JScrollPane {
 
     void addC(Component comp){
         panel.removeAll();
-        panel.add(comp, BorderLayout.CENTER);
+        panel.add(comp);
         updateUI();
     }
 
@@ -40,7 +41,7 @@ class InformPanel extends JScrollPane {
 
     private void instruction(JLabel helpInstr){
         helpInstr.setText("                     Нажмите на любой пункт меню слева, для получения информации");
-        helpInstr.setFont(new Font("font",Font.TRUETYPE_FONT,16));
+        helpInstr.setFont(new Font("fontBig",Font.TRUETYPE_FONT,16));
         panel.add(helpInstr);
         panel.setBackground(new Color(245,245,245));
     }
