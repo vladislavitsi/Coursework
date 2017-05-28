@@ -1,14 +1,15 @@
 package gui.menuActivities;
 
+import handling.WMIHandler;
+
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by vladi on 24.05.2017.
- */
+
 public class MBoard extends Activity {
     public MBoard(){
-        add(new JLabel("MBoard"));
-        setBackground(Color.WHITE);
+        new Thread(()->{
+            System.out.println(WMIHandler.getWMIValue("mboard.vbs"));
+        }).start();
     }
 }

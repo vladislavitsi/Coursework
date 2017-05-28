@@ -1,23 +1,25 @@
-package gui.menuActivities;
+package gui;
+
+import gui.menuActivities.Activity;
 
 import javax.swing.*;
 
 public class Property extends JLabel {
 
-    private static int counter;
+    public static int counter;
 
-    Property(String text, int y){
+    public Property(String text, int y){
         super(text);
         counter = y;
         setFont(Activity.fontSmall);
-        setBounds(20,counter,600,30);
+        setBounds(15,counter,745,30);
         counter+=40;
     }
 
-    Property(String text){
+    public Property(String text){
         super(text);
         setFont(Activity.fontSmall);
-        setBounds(20,counter,600,30);
+        setBounds(15,counter,745,30);
         counter+=40;
     }
 }

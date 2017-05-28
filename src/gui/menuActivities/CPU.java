@@ -1,5 +1,6 @@
 package gui.menuActivities;
 
+import gui.Property;
 import handling.WMIHandler;
 
 import java.awt.*;
@@ -282,7 +283,7 @@ public class CPU extends Activity {
             systemName.setText(systemName.getText()+infos[i++]);
             visualizationFirmwareEnabled.setText(visualizationFirmwareEnabled.getText()+infos[i++]);
             VMMonitorModeExtensions.setText(VMMonitorModeExtensions.getText()+infos[i++]);
-            setPreferredSize(new Dimension(645,(i+1)*40+10));
+            setPreferredSize(new Dimension(645, Property.counter));
         }).start();
     }
 

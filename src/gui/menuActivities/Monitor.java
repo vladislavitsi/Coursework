@@ -1,6 +1,9 @@
 package gui.menuActivities;
 
+import gui.Property;
 import handling.WMIHandler;
+
+import java.awt.*;
 
 public class Monitor extends Activity{
     public Monitor(){
@@ -28,6 +31,9 @@ public class Monitor extends Activity{
         Property videoInputType = new Property("Режим работы монитора: ");
         add(videoInputType);
 
+        Property screenResolution = new Property("Разрешение экрана: "+((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth())+"x"+((int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()));
+        add(screenResolution);
+
         new Thread(()->{
             String info = WMIHandler.getWMIValue("monitor.vbs");
             String[] infos = info.split("\r\n");
@@ -41,6 +47,5 @@ public class Monitor extends Activity{
             videoInputType.setText(videoInputType.getText()+(infos[7].equals("1")?"Цифровой режим":"Аналоговый режим"));
             updateUI();
         }).start();
-        System.out.println();
     }
 }
