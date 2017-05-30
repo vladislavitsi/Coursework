@@ -2,11 +2,7 @@ strComputer = "."
 Set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\CIMV2")
 Set colItems = objWMIService.ExecQuery( _
     "SELECT * FROM Win32_VideoController",,48)
-Dim i
-i=1
 For Each objItem in colItems
-    Wscript.Echo "" & i
-    i = i+1
     Wscript.Echo "" & objItem.Name
     Wscript.Echo "" & objItem.AdapterCompatibility
     Wscript.Echo "" & objItem.AdapterDACType

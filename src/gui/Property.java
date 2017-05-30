@@ -10,6 +10,9 @@ public class Property extends JLabel {
 
     public Property(String text, int y){
         super(text);
+        if(text.length()>70){
+            setToolTipText(text);
+        }
         counter = y;
         setFont(Activity.fontSmall);
         setBounds(15,counter,745,30);
@@ -18,6 +21,9 @@ public class Property extends JLabel {
 
     public Property(String text){
         super(text);
+        if(text.length()>70){
+            setToolTipText(text);
+        }
         setFont(Activity.fontSmall);
         setBounds(15,counter,745,30);
         counter+=40;

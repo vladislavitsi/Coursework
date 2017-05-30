@@ -17,33 +17,19 @@ public abstract class WMIHandler {
         return output.trim();
     }
 
-    private static String getEnvVar(String envVarName) throws Exception
-    {
-        String varName = "%"+envVarName+"%";
-        String envVarValue = execute(new String[] {"cmd.exe", "/C", "echo "+varName});
-        if(envVarValue.equals(varName))
-        {
-            throw new Exception("Environment variable '"+envVarName+"' does not exist!");
-        }
-        return envVarValue;
-    }
-
-    private static String execute(String[] cmdArray) throws Exception
-    {
+    private static String execute(String[] cmdArray) throws Exception {
         Process process = Runtime.getRuntime().exec(cmdArray);
-        BufferedReader input = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        BufferedReader input = new BufferedReader(new InputStreamReader(process.getInputStream(),"cp866"));
         String output = "";
-        String line = "";
-        while((line = input.readLine()) != null)
-        {
-            //need to filter out lines that don't contain our desired output
-            if(!line.contains("Microsoft") && !line.equals(""))
-            {
+        String line;
+        input.readLine();
+        input.readLine();
+        while((line = input.readLine()) != null) {
+            if(!line.equals("")) {
                 output += line +CRLF;
             }
         }
         process.destroy();
-        process = null;
         return output.trim();
     }
 }

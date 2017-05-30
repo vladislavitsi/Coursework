@@ -15,16 +15,14 @@ public class GPU extends Activity {
         new Thread(()->{
             Property.counter = 10;
             String[] infos = WMIHandler.getWMIValue("gpu.vbs").split("\r\n");
-            for(int i=0;i<(infos.length/23);i++){
-                int x;
+            int j=0;
+            for(int i=0;i<(infos.length/22);i++){
                 String tempStr = "";
-                String drivers[] = infos[14+(23*i)].split(",");
-                add(new BProperty("Видео адаптер "+infos[23*i]));
-                add(new Property("Имя адаптера: "+infos[1+(23*i)]));
-                add(new Property("Производитель: "+infos[2+(23*i)]));
-                add(new Property("Имя DAC: "+infos[3+(23*i)]));
-                add(new Property("Размер видеопамяти: "+infos[4+(23*i)]+" байт"));
-                switch (Integer.valueOf(infos[5+(23*i)])){
+                add(new BProperty("Имя адаптера: "+infos[j++]));
+                add(new Property("Производитель: "+infos[j++]));
+                add(new Property("Имя DAC: "+infos[j++]));
+                add(new Property("Размер видеопамяти: "+infos[j++]+" байт"));
+                switch (Integer.valueOf(infos[j++])){
                     case 1:
                         tempStr = "Другое";
                         break;
@@ -63,10 +61,10 @@ public class GPU extends Activity {
                         break;
                 }
                 add(new Property("Доступность устройства: "+tempStr));
-                add(new Property("Использует пользовательскую конфигурацию: "+infos[6+(23*i)]));
-                add(new Property("Текущее кол-во бит на пиксель: "+infos[7+(23*i)]));
-                add(new Property("Текущая частоа обновления изображения: "+infos[8+(23*i)]));
-                switch (Integer.valueOf(infos[9+(23*i)])){
+                add(new Property("Использует пользовательскую конфигурацию: "+infos[j++]));
+                add(new Property("Текущее кол-во бит на пиксель: "+infos[j++]));
+                add(new Property("Текущая частоа обновления изображения: "+infos[j++]));
+                switch (Integer.valueOf(infos[j++])){
                     case 1:
                         tempStr = "Другое";
                         break;
@@ -81,19 +79,20 @@ public class GPU extends Activity {
                         break;
                 }
                 add(new Property("Текущий режим сканирования: "+tempStr));
-                add(new Property("Дата версии драйвера: "+infos[10+(23*i)]));
-                add(new Property("Версия драйвера: "+infos[11+(23*i)]));
-                add(new Property("Путь к INF-файлу драйвера: "+infos[12+(23*i)]));
-                add(new Property("Раздел INF-файла, с видеоинф. Windows: "+infos[13+(23*i)]));
+                add(new Property("Дата версии драйвера: "+infos[j++]));
+                add(new Property("Версия драйвера: "+infos[j++]));
+                add(new Property("Путь к INF-файлу драйвера: "+infos[j++]));
+                add(new Property("Раздел INF-файла, с видеоинф. Windows: "+infos[j++]));
                 add(new Property("Установленные драйвера устройства отображения: "));
+                String drivers[] = infos[j++].split(",");
                 for(String driver:drivers){
                     add(new IProperty(driver));
                 }
-                add(new Property("Максимальная частота обновления видеоконтроллера: "+infos[15+(23*i)]));
-                add(new Property("Минимальная частота обновления видеоконтроллера: "+infos[16+(23*i)]));
-                add(new Property("Монохром: "+infos[17+(23*i)]));
-                add(new Property("Статус: "+infos[18+(23*i)]));
-                switch (Integer.valueOf(infos[19+(23*i)])){
+                add(new Property("Максимальная частота обновления видеоконтроллера: "+infos[j++]));
+                add(new Property("Минимальная частота обновления видеоконтроллера: "+infos[j++]));
+                add(new Property("Монохром: "+infos[j++]));
+                add(new Property("Статус: "+infos[j++]));
+                switch (Integer.valueOf(infos[j++])){
                     case 1:
                         tempStr = "Другое";
                         break;
@@ -135,7 +134,7 @@ public class GPU extends Activity {
                         break;
                 }
                 add(new Property("Тип видеоархитектуры: "+tempStr));
-                switch (Integer.valueOf(infos[20+(23*i)])){
+                switch (Integer.valueOf(infos[j++])){
                     case 1:
                         tempStr = "Другое";
                         break;
@@ -177,12 +176,12 @@ public class GPU extends Activity {
                         break;
                 }
                 add(new Property("Тип видеопамяти: "+tempStr));
-                add(new Property("Текущее разрешение X кол-во цветов: "+infos[21+(23*i)]));
-                add(new Property("Видеопроцессор: "+infos[22+(23*i)]));
-                remove(loading);
-                setPreferredSize(new Dimension(740, Property.counter));
-                updateUI();
+                add(new Property("Текущее разрешение X кол-во цветов: "+infos[j++]));
+                add(new Property("Видеопроцессор: "+infos[j++]));
             }
+            remove(loading);
+            setPreferredSize(new Dimension(740, Property.counter));
+            updateUI();
         }).start();
     }
 }
