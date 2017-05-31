@@ -33,10 +33,11 @@ public class HDDPart extends Activity {
                 add(new Property("Серийный номер: "+infos[j++]));
                 add(new Property("Поддержка DiskQuotas: "+infos[j++]));
                 add(new Property("Поддержка сжатия на основе файлов: "+infos[j++]));
-                remove(loading);
-                setPreferredSize(new Dimension(645, Property.counter));
-                updateUI();
+                add(new Property(""));
             }
+            remove(loading);
+            setPreferredSize(new Dimension(645, Property.counter-40));
+            updateUI();
         }).start();
     }
 

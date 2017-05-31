@@ -76,8 +76,9 @@ public class HDD extends Activity {
                 add(new Property("Обзее кол-во секторов: " + infos[j++]));
                 add(new Property("Общее кол-во дорожек: " + infos[j++]));
                 add(new Property("Кол-во дорожек в цилиндре: " + infos[j++]));
+                add(new Property(""));
             }
-            setPreferredSize(new Dimension(645, Property.counter));
+            setPreferredSize(new Dimension(645, Property.counter-40));
             remove(loading);
             updateUI();
         }).start();

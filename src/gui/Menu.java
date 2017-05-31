@@ -22,7 +22,7 @@ class Menu extends JMenuBar {
 
         JMenu fileMenu = new JMenu("Файл");
         fileMenu.setFont(FONT);
-            saveLog = new ItemMenu("Сохранить лог на сервер");
+            saveLog = new ItemMenu("Сохранить данные");
             exit = new ItemMenu("Выход");
             fileMenu.add(saveLog);
             fileMenu.addSeparator();
@@ -49,7 +49,7 @@ class Menu extends JMenuBar {
 
     private void addActionListeners(){
         //save log
-        saveLog.addActionListener(e -> {});
+        saveLog.addActionListener(e -> new Saver());
         //exit
         exit.addActionListener(e -> System.exit(0));
         //keylog

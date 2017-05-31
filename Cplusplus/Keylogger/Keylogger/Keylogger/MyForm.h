@@ -58,10 +58,12 @@ namespace Keylogger {
 			// log
 			// 
 			this->log->AcceptsReturn = true;
+			this->log->BackColor = System::Drawing::SystemColors::Window;
 			this->log->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->log->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->log->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
+			this->log->ForeColor = System::Drawing::SystemColors::Desktop;
 			this->log->Location = System::Drawing::Point(13, 12);
 			this->log->MaxLength = 65536;
 			this->log->Multiline = true;

@@ -1,5 +1,6 @@
 package gui.menuActivities;
 
+import gui.BProperty;
 import gui.Property;
 import handling.WMIHandler;
 
@@ -181,11 +182,11 @@ public class CPU extends Activity {
             add(new Property("Поддержка расширений Intel: "+infos[j]));
             remove(loading);
             setPreferredSize(new Dimension(645, Property.counter));
-
-            add(new Property("Использование CPU: ", 10));
-            Property cpuUsage = new Property("");
+            Property.counter = 10;
+            add(new BProperty("Использование CPU: "));
+            BProperty cpuUsage = new BProperty("");
             add(cpuUsage);
-            cpuUsage.setBounds(180,10,100,30);
+            cpuUsage.setBounds(190,10,100,30);
             com.sun.management.OperatingSystemMXBean operatingSystemMXBean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 
             new Thread(()->{

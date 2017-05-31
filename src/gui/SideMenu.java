@@ -9,11 +9,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.LinkedList;
 
-class SideMenu extends JPanel {
+public class SideMenu extends JPanel {
 
     private LinkedList<ItemSideMenu> sideMenuList;
-    private final static Color enteredButtonColor = new Color(225, 245, 254);
-    private final static Color pressedButtonColor = new Color(179, 229, 252);
+    public final static Color enteredButtonColor = new Color(225, 245, 254);
+    public final static Color pressedButtonColor = new Color(179, 229, 252);
 
     SideMenu(){
         setBorder(new MatteBorder(0,0,0,1,Color.LIGHT_GRAY));
@@ -31,7 +31,7 @@ class SideMenu extends JPanel {
         sideMenuList.add(new ItemSideMenu("Монитор","Monitor"));
         sideMenuList.add(new ItemSideMenu("Сетевые адаптеры","Net"));
         sideMenuList.add(new ItemSideMenu("Запущеные приложения","Apps"));
-        sideMenuList.add(new ItemSideMenu("Время работы ПК","PCTime"));
+        sideMenuList.add(new ItemSideMenu("Время работы ПК","SysTime"));
         sideMenuList.add(new ItemSideMenu("Время работы пользователей","UTime"));
         int i=0;
         for(ItemSideMenu itemSideMenu:sideMenuList){

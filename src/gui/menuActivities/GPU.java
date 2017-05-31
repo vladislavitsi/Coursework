@@ -178,9 +178,10 @@ public class GPU extends Activity {
                 add(new Property("Тип видеопамяти: "+tempStr));
                 add(new Property("Текущее разрешение X кол-во цветов: "+infos[j++]));
                 add(new Property("Видеопроцессор: "+infos[j++]));
+                add(new Property(""));
             }
             remove(loading);
-            setPreferredSize(new Dimension(740, Property.counter));
+            setPreferredSize(new Dimension(740, Property.counter-40));
             updateUI();
         }).start();
     }

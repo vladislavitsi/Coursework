@@ -24,7 +24,9 @@ public class Monitor extends Activity{
                 add(new Property("Ширина: " + infos[j++]));
                 add(new Property("Высота: " + infos[j++]));
                 add(new Property("Режим работы монитора: " + (infos[j++].equals("1") ? "Цифровой режим" : "Аналоговый режим")));
+                add(new Property(""));
             }
+            Property.counter -= 40;
             add(new Property("Разрешение экрана: "+((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth())+"x"+((int)Toolkit.getDefaultToolkit().getScreenSize().getHeight())));
             remove(loading);
             setPreferredSize(new Dimension(740, Property.counter));
