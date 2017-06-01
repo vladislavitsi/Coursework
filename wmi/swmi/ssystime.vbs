@@ -5,14 +5,14 @@ Set colItems = objWMIService.ExecQuery( _
 For Each objItem in colItems 
 
 If isNull(objItem.LastBootUpTime) Then
-            Wscript.Echo "-"
+            Wscript.Echo "LastBootUpTime: -"
         Else
-            Wscript.Echo "" & objItem.LastBootUpTime
+            Wscript.Echo "LastBootUpTime: " & objItem.LastBootUpTime
         End If
 
 If isNull(objItem.InstallDate) Then
-            Wscript.Echo "-"
+            Wscript.Echo "InstallDate: -"
         Else
-            Wscript.Echo "" & objItem.InstallDate
+            Wscript.Echo "InstallDate: " & objItem.InstallDate
         End If
 Next

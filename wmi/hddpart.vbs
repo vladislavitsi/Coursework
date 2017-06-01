@@ -7,26 +7,106 @@ i=1
 For Each objItem in colItems
     Wscript.Echo "" & i
     i = i+1
-    Wscript.Echo "" & objItem.Caption
-    Wscript.Echo "" & objItem.Automount
-    Wscript.Echo "" & objItem.BlockSize
-    Wscript.Echo "" & objItem.BootVolume
-    Wscript.Echo "" & objItem.Capacity
-    Wscript.Echo "" & objItem.FreeSpace
-    Wscript.Echo "" & objItem.Compressed
-    Wscript.Echo "" & objItem.DeviceID
-    Wscript.Echo "" & objItem.DriveType
-    Wscript.Echo "" & objItem.FileSystem
-    Wscript.Echo "" & objItem.IndexingEnabled
-    If isNull(objItem.Label) Then
-            Wscript.Echo "-"
-        Else
-            Wscript.Echo "" & objItem.Label
-        End If
-    Wscript.Echo "" & objItem.MaximumFileNameLength
-    Wscript.Echo "" & objItem.PageFilePresent
-    Wscript.Echo "" & objItem.SerialNumber
-    Wscript.Echo "" & objItem.SupportsDiskQuotas
-    Wscript.Echo "" & objItem.SupportsFileBasedCompression
+If IsNull(objItem.Caption) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.Caption
+    End If
+
+If IsNull(objItem.Automount) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.Automount
+    End If
+
+If IsNull(objItem.BlockSize) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.BlockSize
+    End If
+
+If IsNull(objItem.BootVolume) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.BootVolume
+    End If
+
+If IsNull(objItem.Capacity) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.Capacity
+    End If
+
+If IsNull(objItem.FreeSpace) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.FreeSpace
+    End If
+
+If IsNull(objItem.Compressed) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.Compressed
+    End If
+
+If IsNull(objItem.DeviceID) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.DeviceID
+    End If
+  
+If IsNull(objItem.DriveType) Then
+        Wscript.Echo "0"
+    Else
+        Wscript.Echo "" & objItem.DriveType
+    End If
+
+If IsNull(objItem.FileSystem) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.FileSystem
+    End If
+
+If IsNull(objItem.IndexingEnabled) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.IndexingEnabled
+    End If
+
+If isNull(objItem.Label) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.Label
+    End If
+
+If isNull(objItem.MaximumFileNameLength) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.MaximumFileNameLength
+    End If
+
+If isNull(objItem.PageFilePresent) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.PageFilePresent
+    End If
+
+If isNull(objItem.SerialNumber) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.SerialNumber
+    End If
+  
+If isNull(objItem.SupportsDiskQuotas) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.SupportsDiskQuotas
+    End If
+ 
+If isNull(objItem.SupportsFileBasedCompression) Then
+        Wscript.Echo "-"
+    Else
+        Wscript.Echo "" & objItem.SupportsFileBasedCompression
+    End If
 Next
 

@@ -143,7 +143,7 @@ public class Net extends Activity {
                         break;
                 }
                 add(new Property("Статус сетевого подключения: " + tempStr));
-                add(new Property("Физический адаптер?: " + infos[j++]));
+                add(new Property("Физический адаптер: " + infos[j++]));
                 add(new Property("PNPDeviceID: " + infos[j++]));
                 add(new Property("Название сетевого адаптера: " + infos[j++]));
                 add(new Property("Имя службы сетевого адаптера: " + infos[j++]));

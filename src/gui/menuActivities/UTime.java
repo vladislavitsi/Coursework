@@ -67,12 +67,6 @@ public class UTime extends Activity {
                 add(new Property("Имя: "+infos[j++]));
                 add(new Property("Кол-во входов: "+infos[j++]));
             }
-//            Date onlineTime = null;
-//            try {
-//                onlineTime = new SimpleDateFormat("yyyyMMddHHmmSS").parse(startT.nextToken());
-//            } catch (ParseException e) {
-//                e.printStackTrace();
-//            }
 
             remove(loading);
             setPreferredSize(new Dimension(740, Property.counter));

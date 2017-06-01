@@ -13,6 +13,7 @@ public class Monitor extends Activity{
             add(loading);
             String info = WMIHandler.getWMIValue("monitor.vbs");
             String[] infos = info.split("\r\n");
+            String tempStr = "";
             Property.counter = 10;
             int j=0;
             for (int i=0;i<(infos.length/8);i++) {
@@ -23,7 +24,10 @@ public class Monitor extends Activity{
                 add(new Property("Год производства: " + infos[j++]));
                 add(new Property("Ширина: " + infos[j++]));
                 add(new Property("Высота: " + infos[j++]));
-                add(new Property("Режим работы монитора: " + (infos[j++].equals("1") ? "Цифровой режим" : "Аналоговый режим")));
+                tempStr = infos[j++];
+                if(!tempStr.equals("-1")){
+                    add(new Property("Режим работы монитора: " + (tempStr.equals("1") ? "Цифровой режим" : "Аналоговый режим")));
+                }
                 add(new Property(""));
             }
             Property.counter -= 40;

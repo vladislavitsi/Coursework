@@ -5,33 +5,33 @@ Set colItems = objWMIService.ExecQuery( _
 For Each objItem in colItems
 
 If isNull(objItem.InstanceName) Then
-            Wscript.Echo "-"
+            Wscript.Echo "InstanceName: -"
         Else
-            Wscript.Echo "" & objItem.InstanceName
+            Wscript.Echo "InstanceName: " & objItem.InstanceName
         End If
 
 If isNull(objItem.Active) Then
-            Wscript.Echo "-"
+            Wscript.Echo "Active: -"
         Else
-            Wscript.Echo "" & objItem.Active
+            Wscript.Echo "Active: " & objItem.Active
         End If
 
 If isNull(objItem.ProductCodeID) Then
-            Wscript.Echo "-"
+            Wscript.Echo "ProductCodeID: -"
         Else
-            Wscript.Echo "" & Join(objItem.ProductCodeID, ",")
+            Wscript.Echo "ProductCodeID: " & Join(objItem.ProductCodeID, ",")
         End If
 
 If isNull(objItem.SerialNumberID) Then
-            Wscript.Echo "-"
+            Wscript.Echo "SerialNumberID: -"
         Else
-            Wscript.Echo "" & Join(objItem.SerialNumberID, ",")
+            Wscript.Echo "SerialNumberID: " & Join(objItem.SerialNumberID, ",")
         End If
 
 If isNull(objItem.YearOfManufacture) Then
-            Wscript.Echo "-"
+            Wscript.Echo "YearOfManufacture: -"
         Else
-            Wscript.Echo "" & objItem.YearOfManufacture
+            Wscript.Echo "YearOfManufacture: " & objItem.YearOfManufacture
         End If
 
 Next
@@ -41,21 +41,21 @@ Set colItems = objWMIService.ExecQuery( _
 For Each objItem in colItems
 
 If isNull(objItem.MaxHorizontalImageSize) Then
-            Wscript.Echo "-"
+            Wscript.Echo "MaxHorizontalImageSize: -"
         Else
-            Wscript.Echo "" & objItem.MaxHorizontalImageSize
+            Wscript.Echo "MaxHorizontalImageSize: " & objItem.MaxHorizontalImageSize
         End If
 
 If isNull(objItem.MaxVerticalImageSize) Then
-            Wscript.Echo "-"
+            Wscript.Echo "MaxVerticalImageSize: -"
         Else
-            Wscript.Echo "" & objItem.MaxVerticalImageSize
+            Wscript.Echo "MaxVerticalImageSize: " & objItem.MaxVerticalImageSize
         End If
 
-'-1 -
+'-1
 If isNull(objItem.VideoInputType) Then       
-            Wscript.Echo "-1"
+            Wscript.Echo "VideoInputType: -1"
         Else
-            Wscript.Echo "" & objItem.VideoInputType
+            Wscript.Echo "VideoInputType: " & objItem.VideoInputType
         End If
 Next

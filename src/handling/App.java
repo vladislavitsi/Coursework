@@ -8,3 +8,7 @@ public class App {
 
     }
 }
+
+/*
+javacode: 1652
+ */
