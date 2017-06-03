@@ -21,6 +21,9 @@ public class CPU extends Activity {
             add(new Property("Адресная ширина: "+infos[j++]+" бит"));
 
             switch (Integer.parseInt(infos[j++])){
+                case -1:
+                    tempStr = "Неизвестно";
+                    break;
                 case 0:
                     tempStr = "x86";
                     break;

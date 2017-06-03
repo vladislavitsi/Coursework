@@ -11,6 +11,7 @@ public class AboutFrame extends JFrame {
     AboutFrame(){
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("О программе");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("res\\icon_black.png"));
         setBounds((Toolkit.getDefaultToolkit().getScreenSize().width/2)-200,(Toolkit.getDefaultToolkit().getScreenSize().height/2)-175,400, 250);
         setLayout(new BorderLayout());
         setResizable(false);
@@ -23,7 +24,9 @@ public class AboutFrame extends JFrame {
         panel.setBackground(Color.WHITE);
         panel.setLayout(null);
         add(panel, BorderLayout.CENTER);
-
+//        JLabel pic = new JLabel(new ImageIcon("res\\icon_black.png"));
+//        pic.setBounds(10,10,50,50);
+//        add(pic);
         new Label("Программа для получения информации о ПК",70);
         new Label("Разработана в рамках Курсового проекта по дисциплине:",90);
         new Label("СИСТЕМНОЕ ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ",110);
@@ -31,7 +34,6 @@ public class AboutFrame extends JFrame {
         new Label("Клещенко Владислав Вячеславович",150);
         new Label("Атрашков Алексей Игоревич",170);
         new Label("Сусло Константин Николаевич",190);
-
     }
 
     class Label extends JLabel{

@@ -60,6 +60,7 @@ namespace MouseLog {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->lX = (gcnew System::Windows::Forms::Label());
 			this->lY = (gcnew System::Windows::Forms::Label());
 			this->dX = (gcnew System::Windows::Forms::Label());
@@ -163,6 +164,7 @@ namespace MouseLog {
 			this->Controls->Add(this->lY);
 			this->Controls->Add(this->lX);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"MyForm";

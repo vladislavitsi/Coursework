@@ -5,29 +5,29 @@ Set colItems = objWMIService.ExecQuery( _
 For Each objItem in colItems 
 
     If isNull(objItem.Caption) Then
-        Wscript.Echo "-"
+        Wscript.Echo "Caption: -"
     Else
-        Wscript.Echo "" & objItem.Caption
+        Wscript.Echo "Caption: " & objItem.Caption
     End IF
 
 
     If isNull(objItem.ProcessId) Then
-        Wscript.Echo "-"
+        Wscript.Echo "ProcessId: -"
     Else
-        Wscript.Echo "" & objItem.ProcessId
+        Wscript.Echo "ProcessId: " & objItem.ProcessId
     End IF
 
 
     If isNull(objItem.Priority) Then
-        Wscript.Echo "-"
+        Wscript.Echo "Priority: -"
     Else
-        Wscript.Echo "" & objItem.Priority
+        Wscript.Echo "Priority: " & objItem.Priority
     End IF
 
 
     If isNull(objItem.ThreadCount) Then
-        Wscript.Echo "-"
+        Wscript.Echo "ThreadCount: -"
     Else
-        Wscript.Echo "" & objItem.ThreadCount
+        Wscript.Echo "ThreadCount: " & objItem.ThreadCount
     End IF
 Next

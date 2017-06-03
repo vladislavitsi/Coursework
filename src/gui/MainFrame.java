@@ -12,6 +12,7 @@ public class MainFrame extends JFrame{
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("KAS Information");
         setBounds((Toolkit.getDefaultToolkit().getScreenSize().width/2)-450,(Toolkit.getDefaultToolkit().getScreenSize().height/2)-335,1000, 670);
+        setIconImage(Toolkit.getDefaultToolkit().getImage("res\\icon_black.png"));
         setLayout(null);
         setResizable(false);
         addComponents();
