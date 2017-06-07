@@ -1,7 +1,7 @@
 package gui.menuActivities;
 
-import javax.swing.*;
-import java.awt.*;
+        import javax.swing.*;
+        import java.awt.*;
 
 public abstract class Activity extends JPanel{
     public static Font fontBig = new Font("fontBig",Font.TRUETYPE_FONT,20);

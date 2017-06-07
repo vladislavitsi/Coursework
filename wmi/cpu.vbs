@@ -174,13 +174,6 @@ For Each objItem in colItems
     End IF
 
 
-    If isNull(objItem.SerialNumber) Then
-        Wscript.Echo "-"
-    Else
-    Wscript.Echo "" & objItem.SerialNumber
-    End IF
-
-
     If isNull(objItem.SocketDesignation) Then
         Wscript.Echo "-"
     Else

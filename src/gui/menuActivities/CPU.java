@@ -178,7 +178,6 @@ public class CPU extends Activity {
             add(new Property("Ревизия: "+infos[j++]));
             add(new Property("Роль: "+infos[j++]));
             add(new Property("Поддержка преобразования адресов: "+infos[j++]));
-            add(new Property("Серийный номер: "+infos[j++]));
             add(new Property("Сокет: "+infos[j++]));
             add(new Property("Имя системы: "+infos[j++]));
             add(new Property("Виртуализация включена: "+infos[j++]));

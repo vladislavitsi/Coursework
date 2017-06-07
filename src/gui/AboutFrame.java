@@ -24,9 +24,6 @@ public class AboutFrame extends JFrame {
         panel.setBackground(Color.WHITE);
         panel.setLayout(null);
         add(panel, BorderLayout.CENTER);
-//        JLabel pic = new JLabel(new ImageIcon("res\\icon_black.png"));
-//        pic.setBounds(10,10,50,50);
-//        add(pic);
         new Label("Программа для получения информации о ПК",70);
         new Label("Разработана в рамках Курсового проекта по дисциплине:",90);
         new Label("СИСТЕМНОЕ ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ",110);

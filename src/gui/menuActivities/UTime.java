@@ -68,6 +68,15 @@ public class UTime extends Activity {
                 add(new Property("Кол-во входов: "+infos[j++]));
             }
 
+            info = WMIHandler.getWMIValue("users.vbs");
+            infos = info.split("\r\n");
+            j=0;
+            for(int i=0;i<(infos.length/3);i++) {
+                add(new Property(""));
+                add(new BProperty("Пользователь: "+infos[j++]));
+                add(new Property("Выключен: "+infos[j++]));
+                add(new Property("SSID: "+infos[j++]));
+            }
             remove(loading);
             setPreferredSize(new Dimension(740, Property.counter));
             updateUI();
